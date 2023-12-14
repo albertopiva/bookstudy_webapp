@@ -1,0 +1,53 @@
+<!--
+Author: BookStudy Team
+Version: 1.0
+Since: 1.0
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Insert Conference Form</title>
+    <script src="../../../js/utils.js"></script>
+    <script src="../../../js/conference/insert_conference.js"></script>
+    <link href="../../../css/FontAwesome/css/all.css" rel="stylesheet"/>
+    <link href="../../../css/FontAwesome/css/fontawesome.css" rel="stylesheet"/>
+    <link href="../../../css/template.css" type="text/css" rel="stylesheet"/>
+    <link href="../../../css/body.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+    <header></header>
+    <h1>Insert Conference Form</h1>
+
+    <hr/>
+    <label>Insert Conference</label>
+
+    <label><b>Date:</b>
+    <input name = "date" type = "date" required/><br/><br/>
+    </label>
+
+    <label><b>Title:</b>
+    <input name = "title" placeholder="Enter conference title" type = "text" required/><br/><br/>
+    </label>
+
+    <label><b>Description:</b>
+    <input name = "description" placeholder="Enter description" type = "text" required/><br/><br/>
+    </label>
+
+    <label><b>ConfroomID:</b>
+    <select id = "selectRoom" name = "confroomID"  ></select>
+    </label>
+    <br/><br/>
+
+    <button id="insertConference">Submit</button><br/>
+    <div id = "responseInsert"></div>
+    <form action="/bookstudy-webapp-1.0/jsp/homepage.jsp">
+        <button type="submit">Go back to Homepage</button><br/>
+    </form>
+
+    <footer></footer>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+This file contain the required resources and functionalites for the project.
+------------------------------------------------------------------------------------------------------------------------
+Resource (Java Bean):
+------------------------------------------------------------------------------------------------------------------------
+-Person: a super class that must be extended by user, member and spokesperson.
+
+-Member: is a member of the library and he can has two constructor:
+    -(Phone_number,password,role); //Use for login
+    -(Phone_number,password,role,First_name,Last_name,Born_city, Born_region, Birth_date, City, Region, Enrolled_by)
+
+-User: is the generic user (not member of the library) that can also reserve his seat but with some limitation.
+    -(Phone_number,password,First_name,Last_name,Role) //Use both for login and all data access
+
+-SpokePerson: is the Association's spokeperson and it can book a conference
+    -(Phone_number,password,Name,Surname,Association)
+
+-ConferenceRoom: represent the room where a conference can be booked:
+    -(ID, Name)
+
+-Reservation: represent the slot and seat reservation by a user or a member. Represent also
+              a reservation about a conference
+    -(Alphanumeric_code, Date, entry_time, exit_time)
+    We can use this class as superclass of another 3 classes that extend Reservation:
+    [with the tag SUPER we intend the super constructor (Alphanumeric_code, Date, entry_time, exit_time)]
+    -ReservationMember: (super, mslotID, memberID)
+    -ReservationUser: (super, uslotID, userID)
+    -ReservationConference: (super, spokesID, confroomID)
+
+-Seat and slot (thinking about this later, in particular how to represent them)
+
+
+------------------------------------------------------------------------------------------------------------------------
+Data Access Object (DAO):
+------------------------------------------------------------------------------------------------------------------------
+- AbstractDAO: this class is an abstract class and must be extended by all the other DAO classes. It is
+    responsable to clean the resources used to access the database.
+
+- UserDAO/MemberDAO/SpokesPersonDAO: these classes are used to access the data about users, members and spokespersons
+    respectively. The main functions are to provide an authentication for the user (check if the user exist with a
+    given password, get the data about a given user, insert a new user.
+
+- SlotDAO/SeatDAO: these classes give the .....
+
+- ReservationDAO: this class is a kind of superclasses for all type of reservation.
+    The request is filtered, since we have a unique table in which we store all the data about the reservation made by
+    a user, a member or a spokesperson. So, in general all the method that return an object, it is a
+    Reservation object, that is the superclass of ReservationUser, ReservationMember and ReservationConference,
+    but it return always a specific object w.r.t who made a request (e.g. if a member ask for the list of its
+    reservations, the method getAllReservationByUser(...) return an ArrayList<ReservationMember>).
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+Functionalities (Servlets): In theory for every kind of servlet there will be a DAO class that is used to
+access the database.
+------------------------------------------------------------------------------------------------------------------------
+-AbstractServlet: this servlet is an abstract servlet and must be extended by all other servlet classes.
+    It is responsable to start the the connection pool and give the connection at the servlet.
+
+-Authentication: this servlet implements the authentication function for all the type of users.
+                In particular we can distinguish between different kind of users using a specific tag in
+                the REST call. This will be a POST request.
+    -function call: auth/kindOfUser&username&passwd
+
+-Enroll: this servlet implements the function that allow a member to create and enroll another member.
+        This will be a POST request.
+    -function call: enroll/myUser&infoAboutNewUser
+    [infoAboutNewUser can be a JSON object, to simplify the format of the request]
+
+-ViewReservation: this servlet implements a generic request about viewing a reservation.
+                We have to decide how to generalize this kind of request, maybe distinguishing the kind of reservation
+                (user, member, spokePerson). Anyway this will be a GET request.
+
+-ReserveASeat: this servlet implements the reservation. We can use it for all kind of user.
+    This will be a POST request.
+    -function call: reserv/insert/info
+    [info will be a JSON object: if we store a userType field (that will be user or member or spokeperson)
+     we will filter the request]
+    -function call: reserv/view/userID=id: this function return the list of all reservation madde by a user.
+     No matter what kind of user he is, this will be filter by the ReservationDAO class.
+
+
+------------------------------------------------------------------------------------------------------------------------
+Other important things
+------------------------------------------------------------------------------------------------------------------------
+
+- The id of the member and the user must be unique. It's not possible that exist a user with the same id that a member
+  and viceversa. This is to guarantee the consistence of the data, because it may happen that a user become a member.
+  When a user become a member all his information are deleted from User and inserted into Member. His id code must be
+  the same, so all his old reservation associated can be viewed.
+  (Thinking about merge user with member)

@@ -1,0 +1,82 @@
+<div class="first-header-row">
+
+        <!-- Column that contains logo and title of the page-->
+
+        <div class="header-column-left">
+                <img src="/bookstudy-webapp-1.0/media/logo.png" id = "library_icon" alt="Library_logo" class="logo"/>
+                <p class="title">Studenti per la Biblioteca</p>
+        </div>
+
+        <!-- Column that contains buttons for login and registration-->
+
+        <div class="header-column-right">
+
+                <div id="logged">
+                        <div id="userdata"></div>
+                        <div><a class ="logout-button" href="/bookstudy-webapp-1.0/logout">Log out <i class="fas fa-sign-out-alt"></i></a></div>
+                </div>
+
+                <div id="unlogged">
+
+                        <a class="login-button" href="/bookstudy-webapp-1.0/jsp/login.jsp">Log in <i class="fas fa-sign-in-alt"></i></a>
+                        <a class="signin-button" href="/bookstudy-webapp-1.0/jsp/create-user.jsp">Sign in <i class="fas fa-sign-in-alt"></i></a>
+
+                </div>
+        </div>
+</div>
+
+<!-- Navigation bar, different for each role but same template -->
+
+<nav id="navbar">
+        <button class="btn" type="button" id="navbar-button"><i class="fa fa-bars fa-2x"></i></button>
+        <div id="nav-area">
+        <div class="user-links" id="user-links">
+                <ul class="navbar">
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/html/protected/common/insert-seat-reservation.html"><li class="nav-item">Book library seat</li></a>
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/jsp/protected/common/insert-conf-reservation.jsp"><li class="nav-item">Book conference seat</li></a>
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/html/protected/common/update-reservation.html"><li class="nav-item">Update reservation</li></a>
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/html/protected/common/view-reservation.html"><li class="nav-item">View library reservation</li></a>
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/confReserv/view/user/"><li class="nav-item">View conference reservation</li></a>
+                </ul>
+        </div>
+
+        <div class="ass-member-links" id="ass-member-links">
+
+                <ul class="navbar">
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/html/protected/common/insert-seat-reservation.html"><li class="nav-item">Book library seat</li></a>
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/jsp/protected/common/insert-conf-reservation.jsp"><li class="nav-item">Book conference seat</li></a>
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/html/protected/common/update-reservation.html"><li class="nav-item">Update reservation</li></a>
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/html/protected/common/view-reservation.html"><li class="nav-item">View library reservation</li></a>
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/confReserv/view/user/"><li class="nav-item">View conference reservation</li></a>
+                </ul>
+        </div>
+
+        <div class="ass-admin-links" id="ass-admin-links">
+                <ul class="navbar">
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/user/view"><li class="nav-item">View all users</li></a>
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/jsp/protected/assAdmin/upgrade-user.jsp"><li class="nav-item">Upgrade user</li></a>
+                </ul>
+        </div>
+
+        <div class="organizer-links" id="organizer-links">
+                <ul class="navbar">
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/html/protected/organizer/insert-conference.html"><li class="nav-item">Insert new conference</li></a>
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/html/protected/organizer/view-conference.html"><li class="nav-item">View conferences</li></a>
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/html/protected/organizer/delete-conference.html"><li class="nav-item">Delete existing conference</li></a>
+                </ul>
+        </div>
+
+        <div class="cult-office-links" id="cult-office-links">
+                <ul class="navbar">
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/jsp/protected/culturalOffice/create-organizer.jsp"><li class="nav-item">Insert new organizer</li></a>
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/organizer/view"><li class="nav-item">View organizers</li></a>
+                </ul>
+        </div>
+
+        <div class="librarian-links" id="librarian-links">
+                <ul class="navbar">
+                        <a class="nav-link" href="/bookstudy-webapp-1.0/jsp/protected/librarian/create-librarian.jsp"><li class="nav-item">Create new librarian account</li></a>
+                </ul>
+        </div>
+        </div>
+</nav>

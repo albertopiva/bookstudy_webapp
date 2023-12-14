@@ -1,0 +1,53 @@
+<!--
+Author: BookStudy Team
+Version: 1.0
+Since: 1.0
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Insert Reservation Form</title>
+    <link href="../../css/FontAwesome/css/all.css" rel="stylesheet"/>
+    <link href="../../css/FontAwesome/css/fontawesome.css" rel="stylesheet"/>
+    <link href="../../css/template.css" type="text/css" rel="stylesheet"/>
+    <script src="/bookstudy-webapp-1.0/js/utils.js"></script>
+</head>
+
+<body>
+
+    <header></header>
+
+    <h1>Insert Reservation Form</h1>
+    <div>
+
+        <label>Insert reservation</label>
+        <label id = "dateType"><b>Date:</b>
+            <input name="date" type="date"/><br/><br/>
+        </label>
+        <label id = "labelType"><b>User ID:</b>>
+            <input id = "typeID" name = "userID" type = "text"/><br/><br/>
+        </label>
+        <label id = "slotType"><b>User Slot ID:</b>
+            <select id = "slotID" name ="slotID">
+                <option value = "morning">Morning</option>
+                <option value = "afternoon">Afternoon</option>
+                <option value = "evening">Evening</option>
+            </select>
+        </label>
+        <br/>
+        <label id = "seatType"><b>User Seat ID:</b>
+            <div id = seatIDOptions"></div>
+            <input type = "radio" name = "typeOfUser" value = "user" onchange = "changeValue();" checked/>User
+        </label>
+        <button type="submit">Submit</button><br/>
+        <form action="/bookstudy-webapp-1.0/jsp/homepage.jsp">
+            <button type="submit">Go back to Homepage</button><br/>
+        </form>
+    </div>
+
+    <footer></footer>
+
+</body>
+</html>

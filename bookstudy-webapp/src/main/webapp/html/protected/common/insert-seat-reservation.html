@@ -1,0 +1,49 @@
+<!--
+ Author: StudyTeam
+ Version: 1.0
+ Since: 1.0
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Insert Reservation Form</title>
+
+    <script src="/bookstudy-webapp-1.0/js/utils.js"></script>
+    <script src="/bookstudy-webapp-1.0/js/seatReservation/insert_reservation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="../../../css/FontAwesome/css/all.css" rel="stylesheet"/>
+    <link href="../../../css/FontAwesome/css/fontawesome.css" rel="stylesheet"/>
+    <link href="../../../css/template.css" type="text/css" rel="stylesheet"/>
+    <link href="../../../css/body.css" type="text/css" rel="stylesheet"/>
+
+    <script src="/bookstudy-webapp-1.0/js/utils.js"></script>
+</head>
+
+<body>
+    <header></header>
+
+    <div class = "content">
+        <div class = "simil-form">
+            <h1>Insert reservation</h1><br>
+            <label id = "dateType"><b>Date:</b>
+                <input id = "seatReservDate" name="date" type="date"/><br/><br/>
+            </label>
+            <div id ="errorDate"></div>
+            <label id = "slotType"><b>User Slot ID:</b>
+                <select id = "seatReservSlot" name = "slotID"></select><br/><br/>
+            </label>
+            <label id = "seatType"><b>User Seat ID:</b>
+                <select id = "seatReservSeat" name = "seatID"></select><br/><br/>
+            </label>
+            <button id="submitSeatReservation">BOOK</button><br/>
+            <div id = "errorBox"></div>
+            <form action="/bookstudy-webapp-1.0/jsp/homepage.jsp">
+                <button type="submit">Go back to Homepage</button><br/>
+            </form>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>
+

@@ -1,0 +1,8 @@
+"Score: 10/10
+
+-A good and well-written homework report (some minor English error here and there, be more carefull in the future! -- apps like Grammarly may help you avoid simple errors like third person 's')
+–Good the use of filters to protect certain pages.
+–A good implementation of REST classes, although a little limited (as you also noted in your report. In the next homework you may want to integrate some jsp pages with REST calls)
+–OK the git commits from all members of the group.
+–No curl instruction was provided to test the application nor in the report nor in the git repository. When I tried to retrieve some information about a user's resevations for a given conference, no content was present in the server's answer (not even an error message when inserting a wrong ID, or when trying to delete multiple times the same element). Other actions, like the insertion of a new user, were possible from the frontend pages (nice work with hashing the password). Other actions, like the insertion of a conference, was described in the homework. However, no JSON template was provided so I could easily test it.
+"

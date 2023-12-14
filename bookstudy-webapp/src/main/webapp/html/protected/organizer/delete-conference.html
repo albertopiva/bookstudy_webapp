@@ -1,0 +1,40 @@
+<!--
+Author: BookStudy Team
+Version: 1.0
+Since: 1.0
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Delete Conference Form</title>
+    <link href="/bookstudy-webapp-1.0/css/template.css" type="text/css" rel="stylesheet"/>
+    <link href="../../../css/body.css" type="text/css" rel="stylesheet"/>
+    <script src="/bookstudy-webapp-1.0/js/utils.js"></script>
+
+    <script src="../../../js/conference/delete_conference.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="../../../css/FontAwesome/css/all.css" rel="stylesheet"/>
+    <link href="../../../css/FontAwesome/css/fontawesome.css" rel="stylesheet"/>
+
+</head>
+
+<body>
+
+    <header></header>
+
+
+    <label><b>Choose the conference to delete:</b>
+        <select id = "conferenceID"></select>
+    </label>
+
+    <button id="deleteConference">Delete Conference</button><br/>
+    <div id = "responseDelete"></div>
+    <form action="/bookstudy-webapp-1.0/jsp/homepage.jsp">
+        <button type="submit">Go back to Homepage</button><br/>
+    </form>
+    <footer></footer>
+
+</body>
+</html>
